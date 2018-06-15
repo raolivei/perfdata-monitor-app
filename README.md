@@ -17,8 +17,9 @@ Performance data monitor solution for Docker hosts and containers with Prometheu
 ```bash
 git clone https://github.com/raolivei/perfdata-monitor-app
 cd  perfdata-monitor-app/ 
-docker-compose up
+docker-compose up --remove-orphans
 ```
+To save space on disk, use ``--remove-orphans`` flag to delete orphan images after deployment.
 
 Alternatively, you can set credentials for Grafana: 
 ```ADMIN_USER=admin ADMIN_PASSWORD=admin docker-compose up```
