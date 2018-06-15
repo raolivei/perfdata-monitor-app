@@ -1,5 +1,3 @@
-FROM buildpack-deps:stretch
-MAINTAINER Rafael Oliveira <rafa.oliveira1@gmail.com>
 FROM debian:stretch
 
 RUN apt-get update \
