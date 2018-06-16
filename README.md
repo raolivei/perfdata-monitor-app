@@ -30,10 +30,8 @@ If not specified, default login credentials are applied ```(admin/admin)```
 ```bash
 $ docker images
 REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE
-terraform-resgen    latest              5cdb18d22327        8 hours ago         185MB
-<none>              <none>              fae4c5d55707        8 hours ago         830MB
-prom/prometheus     latest              44a4c1c270dc        7 days ago          119MB
-buildpack-deps      stretch             6e3b491f9eca        9 days ago          830MB
+terraform-resgen    latest              c44de968a567        2 hours ago         185MB
+prom/prometheus     latest              44a4c1c270dc        8 days ago          119MB
 grafana/grafana     latest              4700307f41f2        4 weeks ago         238MB
 debian              stretch             8626492fecd3        6 weeks ago         101MB
 google/cadvisor     latest              75f88e3ec333        6 months ago        62.2MB
@@ -41,10 +39,10 @@ google/cadvisor     latest              75f88e3ec333        6 months ago        
 
 ## Containers:
 
-* Prometheus (metrics database) `http://<host-ip>:9090`
-* cAdvisor (containers metrics collector) `http://<host-ip>:8080`
-* Grafana (visualize metrics) `http://<host-ip>:3000`
-* terraform-resgen (terraform resource generator) > *ports not exposed*
+* Prometheus (metrics database) ``http://<host-ip>:9090``
+* cAdvisor (containers metrics collector) ``http://<host-ip>:8080``
+* Grafana (visualize metrics) ``http://<host-ip>:3000``
+* Terraform-ResGen (terraform resource generator) > *ports not exposed*
 
 ### terraform-resgen container:
 * Ruby 2.6-rc image used: ``ruby/2.6-rc/stretch/slim`` - *Image size after deployment: 185MB*.
