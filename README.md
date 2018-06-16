@@ -1,7 +1,7 @@
 perfdata-monitor-app
 ====================
 
-Performance data monitor solution for Docker hosts and containers with Prometheus, Grafana, cAdvisor and terraform-resgen (terraform resource generator).
+Performance data monitor solution for Docker  containers with Prometheus, Grafana, cAdvisor and terraform-resgen (terraform resource generator).
 
 ## Prerequisites:
 
@@ -43,13 +43,14 @@ google/cadvisor     latest              75f88e3ec333        6 months ago        
 * Prometheus (metrics database) ``http://<host-ip>:9090``
 * cAdvisor (containers metrics collector) ``http://<host-ip>:8080``
 * Grafana (visualize metrics) ``http://<host-ip>:3000``
-* Terraform-ResGen (terraform resource generator) > *ports not exposed*
+* Terraform-resgen (terraform resource generator) > *ports not exposed*
 
 ### terraform-resgen container:
-* Ruby 2.6-rc image used: ``ruby/2.6-rc/stretch/slim`` - *Image size after deployment: 185MB*.
-* Dockerfile: ``/perfdata-monitor/terraform/resgen/Dockerfile-terraform-resgen``
-* Infinite loop ruby program: ``/perfdata-monitor/terraform/resgen/resource-collector.rb``
-* *``bash output``* > terraform resources parsed from YAML to HCL (HashiCorp/Terraform), scanning source file and printed out every 5 seconds.
+** Infinite loop ruby program: ``/perfdata-monitor/terraform/resgen/resource-collector.rb``
+* ``bash output`` > prints out a list of terraform resources in HashiCorp (HCL) syntax. The YAML file containing the resources is read from an URL every 5 seconds.
+* Base image: ``debian:stretch``
+* Dockerfile: ``/perfdata-monitor-app/terraform-resgen/Dockerfile-terraform-resgen``
+* *Image size after deployment: 185MB*.
 
 ### Prometheus metrics:
 Raw metrics can be inspected by visiting 
